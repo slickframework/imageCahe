@@ -9,6 +9,7 @@ on the file system. You can add filters to crop, resize for example.
 > -   Cache image copies
 > -   Profiling images
 > -   Apply filters and transformations
+> -   An easy interface to add your own filters
 > -   Lightweight and simple!
 
 **Installation**
