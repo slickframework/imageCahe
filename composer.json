@@ -1,0 +1,28 @@
+{
+    "name": "slick/ImageCache",
+    "description": "Image cache library",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": [
+        "image", "cache", "image processing", "image filtering"
+    ],
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filipe Silva",
+            "email": "silvam.filipe@gmail.com"
+        }
+    ],
+    "require": {
+        "imagine/imagine": "~0.5.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "1.8.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slick\\ImageCache\\": "src"
+        }
+    }
+}
