@@ -1,7 +1,6 @@
 {
     "name": "slick/ImageCache",
     "description": "Image cache library",
-    "version": "1.0.0",
     "type": "library",
     "keywords": [
         "image", "cache", "image processing", "image filtering"
