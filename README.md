@@ -31,6 +31,55 @@ Then you need to run:
 
 **Usage**
 
+Create a definition array like this:
+
+    <?php
+        $config = [
+            'path' => dirname(__DIR__).'/images',
+                'profiles' => [
+                    'thumb' => [
+                        'filters' => [
+                            'ResizeAndTrim' => [
+                                'width' => 32,
+                                'height' => 32
+                            ],
+                        ],
+                        'imageType' => Profile::TYPE_PNG,
+                        'quality' => 8
+                    ],
+                    'filters' => [
+                    'Resize' => [
+                        'width' => 680,
+                        'height' => 300,
+                        'proportional' => true
+                    ],
+                    'Crop' => [
+                        'width' => 680,
+                        'height' => 300,
+                        'verticalAlign' => Crop::TOP,
+                        'horizontalAlign' => Crop::CENTER
+                    ]
+                ],
+                'imageType' => Profile::TYPE_PNG,
+                'quality' => 8
+                ]
+            ]
+        ];
+    
+and initialize the image cache object:
+
+    <?php
+        $cache = new \Slick\ImageCache\ImageCache($config);
+        
+Now you can use the cache object to retrieve image profiles or to process all profiles
+on a provided image:
+
+    <?php
+        $image = new \Slick\ImageCache\Image("path/to/source/image.png");
+        $image = $cache->get("thumb", $image);
+        
+        // process all profiles
+        $cache->processImage($image);
 
 **Contribute**
 
