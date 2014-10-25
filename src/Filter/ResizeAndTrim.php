@@ -47,21 +47,10 @@ class ResizeAndTrim extends AbstractFilter
             'proportional' => true
         ]);
         $this->image = $resize->applyFilter();
-        $size = $this->image->getResourceImage()->getSize();
-        if ($size->getWidth() == $this->width) {
-            $point = [
-                0,
-                ceil(($size->getHeight() - $this->height) / 2)
-            ];
-        } else {
-            $point = [
-                ceil(($size->getWidth() - $this->width) / 2),
-                0
-            ];
-        }
         $crop = new Crop([
             'image' => $this->image,
-            'point' => $point,
+            'verticalAlign' => Crop::MIDDLE,
+            'horizontalAlign' => Crop::CENTER,
             'width' => $this->width,
             'height' => $this->height
         ]);
