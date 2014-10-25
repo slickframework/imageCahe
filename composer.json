@@ -1,5 +1,5 @@
 {
-    "name": "slick/ImageCache",
+    "name": "slick/image-cache",
     "description": "Image cache library",
     "type": "library",
     "keywords": [
