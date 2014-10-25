@@ -38,4 +38,19 @@ interface ImageInterface
      * @return ImagineImage
      */
     public function getResourceImage();
+
+    /**
+     * Returns the image file name without extension
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * Sets image content type for output
+     *
+     * @param $contentType
+     * @return self
+     */
+    public function setContentType($contentType);
 }
