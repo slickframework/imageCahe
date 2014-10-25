@@ -81,12 +81,11 @@ class Resize extends AbstractFilter
             return;
         }
 
-        if ($box->getHeight() > $box->getWidth()) {
-            $this->height = ($this->width * $box->getHeight()) /
-                $box->getWidth();
+        $ratio = $box->getWidth() / $box->getHeight();
+        if (($this->height * $ratio) >= $this->width) {
+            $this->width = $this->height * $ratio;
         } else {
-            $this->width = ($box->getWidth() * $this->height) /
-                $box->getHeight();
+            $this->height = $this->width / $ratio;
         }
     }
 }

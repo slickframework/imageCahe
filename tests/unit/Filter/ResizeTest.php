@@ -129,14 +129,14 @@ class ResizeTest extends Test
     {
         $resize = new Resize([
             'image' => $this->image,
-            'height' => 100,
-            'width' => 100,
+            'height' => 400,
+            'width' => 300,
             'proportional' => true
         ]);
         $image = $resize->applyFilter();
         $box = $image->getResourceImage()->getSize();
-        $this->assertEquals(116, $box->getHeight());
-        $this->assertEquals(100, $box->getWidth());
+        $this->assertEquals(400, $box->getHeight());
+        $this->assertEquals(344, $box->getWidth());
     }
 
     /**
@@ -151,7 +151,7 @@ class ResizeTest extends Test
         $resize = new Resize([
             'image' => $this->image,
             'height' => 100,
-            'width' => 100,
+            'width' => 70,
             'proportional' => true
         ]);
         $image = $resize->applyFilter();
