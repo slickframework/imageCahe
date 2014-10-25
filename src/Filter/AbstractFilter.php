@@ -26,7 +26,7 @@ abstract class AbstractFilter implements FilterInterface
     /**
      * @var ImageInterface
      */
-    private $image;
+    protected $image;
 
     /**
      * @var array
