@@ -80,7 +80,7 @@ class Crop extends AbstractFilter
      *
      * @return float|int
      */
-    private function getXPoint()
+    protected function getXPoint()
     {
         if ($this->point[0] >= 0) {
             return $this->point[0];
@@ -113,7 +113,7 @@ class Crop extends AbstractFilter
      *
      * @return float|int
      */
-    private function getYPoint()
+    protected function getYPoint()
     {
         if ($this->point[1] >= 0) {
             return $this->point[1];
