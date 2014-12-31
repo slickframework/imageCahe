@@ -5,7 +5,7 @@
     "keywords": [
         "image", "cache", "image processing", "image filtering"
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
