@@ -1,3 +1,7 @@
+v1.0.1     2014-31-12
+======================
+* Fixes the bug of Sign filter that fails to work with imageCache factory.
+
 v1.0.0     2014-31-12
 ======================
 + Initial release

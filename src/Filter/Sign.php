@@ -41,15 +41,6 @@ class Sign extends Crop
      */
     protected $font;
 
-
-    public function __construct(array $options = [])
-    {
-        parent::__construct($options);
-        $author = $this->image->getAuthor();
-        $this->height = 26;
-        $this->width = ceil((strlen($author) + 2) * 10.2) + 12;
-    }
-
     /**
      * Applies the filter to the image returning the resulting filtered image
      *
@@ -57,6 +48,7 @@ class Sign extends Crop
      */
     public function applyFilter()
     {
+        $this->updateSize();
         $this->image->getResourceImage()->draw()
             ->text(
                 ' © '.$this->image->getAuthor(),
@@ -97,5 +89,15 @@ class Sign extends Crop
             return 8;
         }
         return parent::getYPoint();
+    }
+
+    /**
+     * Sets the width and height for author name
+     */
+    protected function updateSize()
+    {
+        $author = $this->image->getAuthor();
+        $this->height = 26;
+        $this->width = ceil((strlen($author) + 2) * 10.2) + 12;
     }
 }
