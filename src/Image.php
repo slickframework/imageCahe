@@ -50,6 +50,11 @@ class Image implements ImageInterface
     private $contentType;
 
     /**
+     * @var string
+     */
+    private $author;
+
+    /**
      * Creates an image with provided source file
      *
      * @param string $file
@@ -128,6 +133,30 @@ class Image implements ImageInterface
         $this->contentType = $contentType;
         return $this;
     }
+
+    /**
+     * Returns the image author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Sets image author
+     *
+     * @param string $author
+     * @return self
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+
 
     /**
      * Parses the file property to retrieve the file name and extension

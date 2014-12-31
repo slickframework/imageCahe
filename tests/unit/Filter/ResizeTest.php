@@ -3,7 +3,7 @@
 /**
  * Resize filter test case
  *
- * @package Test\Slick\ImageCache\Filter\Resize
+ * @package Test\Slick\ImageCache\Filter
  * @author    Filipe Silva <silvam.filipe@gmail.com>
  * @copyright 2014 SlickFramework
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
@@ -21,7 +21,7 @@ use Slick\ImageCache\Filter\Resize;
 /**
  * Resize filter test case
  *
- * @package Test\Slick\ImageCache\Filter\Resize
+ * @package Test\Slick\ImageCache\Filter
  * @author    Filipe Silva <silvam.filipe@gmail.com>
  */
 class ResizeTest extends Test

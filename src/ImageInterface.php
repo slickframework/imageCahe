@@ -53,4 +53,20 @@ interface ImageInterface
      * @return self
      */
     public function setContentType($contentType);
+
+    /**
+     * Returns the image author
+     *
+     * @return string
+     */
+    public function getAuthor();
+
+    /**
+     * Sets image author
+     *
+     * @param string $author
+     *
+     * @return self
+     */
+    public function setAuthor($author);
 }
