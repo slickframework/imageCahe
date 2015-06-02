@@ -1,3 +1,7 @@
+v1.1.0     2015-06-02
+======================
++ Frame filter
+
 v1.0.1     2014-31-12
 ======================
 * Fixes the bug of Sign filter that fails to work with imageCache factory.
