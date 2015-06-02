@@ -14,6 +14,7 @@ namespace Slick\ImageCache;
 
 use Imagine\Gd\Imagine;
 use Imagine\Image\ImageInterface as ImagineImage;
+use Imagine\Image\ImagineInterface;
 
 /**
  * Image
@@ -89,6 +90,19 @@ class Image implements ImageInterface
             $this->resourceImage = $imagine->open($this->file);
         }
         return $this->resourceImage;
+    }
+
+    /**
+     * Set resource image
+     *
+     * @param ImagineInterface $image
+     *
+     * @return self
+     */
+    public function setResourceImage($image)
+    {
+        $this->resourceImage = $image;
+        return $this;
     }
 
     /**

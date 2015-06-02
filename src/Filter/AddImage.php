@@ -32,7 +32,7 @@ class AddImage extends Crop
     /**
      * @var Image
      */
-    private $sourceImage;
+    protected $sourceImage;
 
     public function __construct(array $options = [])
     {
