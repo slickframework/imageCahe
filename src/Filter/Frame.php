@@ -72,28 +72,24 @@ class Frame extends AbstractFilter
      */
     protected function getResizeImage()
     {
-        $condition = new ConditionalFilter(
+        $imageSize = $this->image->getResourceImage()->getSize();
+        $newHeight = ($this->width * $imageSize->getHeight()) / $imageSize->getWidth();
+        $resize = new Resize (
             [
                 'image' => $this->image,
-                'condition' => [
-                    ConditionalFilter::IS_EQUAL => [
-                        ConditionalFilter::COND_ORIENTATION,
-                        ConditionalFilter::ORIENTATION_LANDSCAPE
-                    ]
-                ],
-                'filters' => [
-                    'positive' => [
-                        'class' => 'Resize',
-                        'width' => $this->width - $this->padding,
-                    ],
-                    'negative' => [
-                        'class' => 'Resize',
-                        'height'=> $this->height - $this->padding,
-                    ]
-                ]
+                'width' => $this->width
             ]
         );
-        return $condition->applyFilter();
+        if ($newHeight > $this->height) {
+            $resize = new Resize (
+                [
+                    'image' => $this->image,
+                    'height' => $this->height
+                ]
+            );
+        }
+
+        return $resize->applyFilter();
     }
 
     /**
