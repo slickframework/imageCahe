@@ -1,3 +1,7 @@
+v1.1.1     2015-06-04
+======================
+* Fixed the image resize of Frame filter
+
 v1.1.0     2015-06-02
 ======================
 + Frame filter
