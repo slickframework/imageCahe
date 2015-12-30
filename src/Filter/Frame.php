@@ -50,8 +50,9 @@ class Frame extends AbstractFilter
      */
     public function applyFilter()
     {
-        $image = $this->getResizeImage();
-        $this->image = $this->getFrameImage();
+        $this->getResizeImage();
+        $image = clone $this->image;
+        $this->getFrameImage();
 
         $addImage = new AddImage(
             [
@@ -107,7 +108,6 @@ class Frame extends AbstractFilter
             ),
             new Color($this->backgroundColor)
         );
-        $image = new Image(null);
-        return $image->setResourceImage($imageGD);
+        return $this->image->setResourceImage($imageGD);
     }
 }
